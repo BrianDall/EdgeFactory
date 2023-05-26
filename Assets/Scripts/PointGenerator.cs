@@ -5,23 +5,28 @@ public class PointGenerator : MonoBehaviour
 {
     [SerializeField] private Button PointButton;
     [HideInInspector] private int CurrentPoints;
-    
+    [HideInInspector] public int CurrentPointsPerClick;
+
+    public static PointGenerator Instance;
+
     // Start is called before the first frame update
     void Start()
     {
+        //TODO should load this?
+        CurrentPointsPerClick = 1;
         CurrentPoints = 0;
+
         PointButton.onClick.AddListener(ClickPoint);
+        Instance = this;
     }
 
     public void ClickPoint()
     {
-        CurrentPoints++;
-        if (CurrentPoints < 2) return;
+        CurrentPoints += CurrentPointsPerClick;
+        var edgesGained = CurrentPoints / 2;
+        if (edgesGained <= 0) return;
 
-        CurrentPoints = 0;
-
-        var currentEdges = long.Parse(CountEdges.Instance.text);
-        currentEdges++;
-        CountEdges.Instance.text = currentEdges.ToString("D");
+        CurrentPoints %= 2;
+        CountEdges.Instance.CurrentEdges += edgesGained;
     }
 }

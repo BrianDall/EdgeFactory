@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Pentagon
   Id: 005
-  Cost: 1000
+  Cost: 50
   Icon: {fileID: 21300000, guid: da8bfbb7fcf790640ac68e573892444c, type: 3}
   Edges: 5
   Quantity: 0

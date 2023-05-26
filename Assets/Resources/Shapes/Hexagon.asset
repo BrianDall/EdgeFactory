@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Hexagon
   Id: 006
-  Cost: 1000
+  Cost: 60
   Icon: {fileID: 21300000, guid: d1db020f979ddf54598e9b30ef44c1f2, type: 3}
   Edges: 6
   Quantity: 0

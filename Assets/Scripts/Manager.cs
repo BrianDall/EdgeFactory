@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEngine;
 
@@ -13,4 +14,6 @@ public class Manager : MonoBehaviour
 
         Generators = Utils.GetAllGenerators().OrderBy(g => g.Id).ToArray();
     }
+
+    public static long CurrentTime => DateTimeOffset.UtcNow.ToUnixTimeSeconds();
 }

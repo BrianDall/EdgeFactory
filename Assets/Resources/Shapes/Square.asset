@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Square
   Id: 004
-  Cost: 100
+  Cost: 40
   Icon: {fileID: 21300000, guid: 3303ac05bfd8c3547afe8933265b384c, type: 3}
   Edges: 4
   Quantity: 0
-  EdgesPerSecond: 0
+  EdgesPerSecond: 4

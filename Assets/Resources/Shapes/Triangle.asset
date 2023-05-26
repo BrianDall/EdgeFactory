@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Triangle
   Id: 003
-  Cost: 10
+  Cost: 30
   Icon: {fileID: 21300000, guid: 309e2e10a2b730c4ab14474cf6fc7f57, type: 3}
   Edges: 3
   Quantity: 0
-  EdgesPerSecond: 0
+  EdgesPerSecond: 12

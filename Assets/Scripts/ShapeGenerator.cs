@@ -11,28 +11,40 @@ public class ShapeGenerator : MonoBehaviour
     public TextMeshProUGUI CostText;
     [HideInInspector] public ShapeGeneratorData Data;
 
+    [HideInInspector] private int Quantity;
+    [HideInInspector] private long Cost;
+
+    public void Start()
+    {
+        //TODO load data
+        Quantity = Data != null ? Data.Quantity : 0;
+        Cost = Data != null ? Data.Cost : long.MaxValue;
+    }
+
+    public void Update()
+    {
+        if (QuantityText != null) QuantityText.text = Quantity.ToString("D");
+        if (CostText != null) CostText.text = Cost.ToString("D");
+    }
+
     public static object BuyLock { get; } = new();
 
     public void OnBuyClick()
     {
         lock (BuyLock)
         {
-            var currentCost = long.Parse(CostText.text);
-            var currentEdges = long.Parse(CountEdges.Instance.text);
+            var currentCost = Cost;
+            var currentEdges = CountEdges.Instance.CurrentEdges;
             if (currentEdges < currentCost) return;
 
             //Pay
-            var updatedEdges = currentEdges - currentCost;
-            CountEdges.Instance.text = updatedEdges.ToString("D");
-
+            CountEdges.Instance.CurrentEdges -= currentCost;
+            
             //Increment current quantity
-            var currentQuantity = long.Parse(QuantityText.text);
-            currentQuantity++;
-            QuantityText.text = currentQuantity.ToString("D");
+            Quantity++;
 
             //Increase cost
-            currentCost *= 2;
-            CostText.text = currentCost.ToString("D");
+            Cost *= 2;
 
             //Increase edges/s
             Data.EdgesPerSecond += Data.Edges;
