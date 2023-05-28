@@ -17,7 +17,7 @@ namespace Assets.Scripts.Upgrades
             return Player.Instance.Upgrades.First(u => u.Name.Equals(NameText.text));
         }
 
-        public void OnClick()
+        public void OnAdditiveClick()
         {
             var data = GetUpgradeData();
             if(Player.Instance.CurrentEdges < data.Cost) return;
@@ -25,6 +25,20 @@ namespace Assets.Scripts.Upgrades
             Player.Instance.CurrentEdges -= data.Cost;
             data.Cost = (int)(data.Cost * 2);
             Player.Instance.CurrentPointsPerClick++;
+            CostText.text = data.Cost.ToString("D");
+
+            var edgesPerClick = Player.Instance.CurrentPointsPerClick / 2;
+            PointsText.text = edgesPerClick.ToString(CultureInfo.InvariantCulture);
+        }
+
+        public void OnMultiplicativeClick()
+        {
+            var data = GetUpgradeData();
+            if (Player.Instance.CurrentEdges < data.Cost) return;
+
+            Player.Instance.CurrentEdges -= data.Cost;
+            data.Cost = (int)Math.Pow(data.Cost, 2);
+            Player.Instance.CurrentPointsPerClick *= 2;
             CostText.text = data.Cost.ToString("D");
 
             var edgesPerClick = Player.Instance.CurrentPointsPerClick / 2;

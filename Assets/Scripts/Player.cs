@@ -53,6 +53,11 @@ namespace Assets.Scripts
                 {
                     Name = "Point +",
                     Cost = 10
+                },
+                new PlayerUpgradeData
+                {
+                    Name = "Point *",
+                    Cost = 100
                 }
             };
         }
