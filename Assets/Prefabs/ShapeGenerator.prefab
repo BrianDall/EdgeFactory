@@ -256,7 +256,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4559283835446143023}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2787376889976090873}
+        m_TargetAssemblyTypeName: Assets.Scripts.Generators.ShapeGenerator, Assembly-CSharp
+        m_MethodName: OnBuyClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5327649042095130909
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,7 +685,7 @@ GameObject:
   - component: {fileID: 5101833701770793211}
   - component: {fileID: 8947948696107003679}
   - component: {fileID: 7481644745491500424}
-  - component: {fileID: 5403621923711508257}
+  - component: {fileID: 2787376889976090873}
   m_Layer: 5
   m_Name: ShapeGenerator
   m_TagString: Untagged
@@ -744,7 +756,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5403621923711508257
+--- !u!114 &2787376889976090873
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -753,15 +765,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6527948618984369489}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30533b63b0224eb4a8bb63843faf27dd, type: 3}
+  m_Script: {fileID: 11500000, guid: 10086859beb984f4a8214b0f15dcf909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   NameText: {fileID: 1483393427033935662}
-  BuyButton: {fileID: 4320610094491298823}
-  Icon: {fileID: 4433535284026458855}
   QuantityText: {fileID: 8940352529202776018}
   CostText: {fileID: 5494146034544128959}
-  Data: {fileID: 0}
+  BuyButton: {fileID: 4320610094491298823}
 --- !u!1 &6647868919424396116
 GameObject:
   m_ObjectHideFlags: 0
